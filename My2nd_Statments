@@ -1,0 +1,170 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Well seems like its not large and equal to = 9.033195020746888\n"
+     ]
+    }
+   ],
+   "source": [
+    "party=44*44/241+23-22-2*4+4*2\n",
+    "\n",
+    "if party>50 and party<100:\n",
+    "    print(f\"It's quite large number and equal to = {party}\")\n",
+    "\n",
+    "elif party>100:\n",
+    "    print(f\"It's a fucking large number and equal to = {party}\")\n",
+    "\n",
+    "else:\n",
+    "    print(f\"Well seems like its not large and equal to = {party}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Above I make use of conditional statements along with fstrings**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**So this came to my mind that how to keep a hold of the indexes while using loops and also, how to iterate from a particular index and not just the starting. The later part I'll show in the next cell block.**\n",
+    "\n",
+    "**So we do this using a function called enumerate and how this works in shown below**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(0, 'eat')\n",
+      "(1, 'sleep')\n",
+      "(2, 'repeat')\n",
+      "\n",
+      "1 eat\n",
+      "2 sleep\n",
+      "3 repeat\n",
+      "\n",
+      "1\n",
+      "2\n",
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Python program to illustrate\n",
+    "# enumerate function in loops\n",
+    "l1 = [\"eat\",\"sleep\",\"repeat\"]\n",
+    " \n",
+    "# printing the tuples in object directly\n",
+    "for ele in enumerate(l1):\n",
+    "    print(ele)\n",
+    "    \n",
+    "print()\n",
+    "\n",
+    "# changing index and printing separately\n",
+    "for count,ele in enumerate(l1,1):\n",
+    "    print(count,ele)\n",
+    "\n",
+    "print()\n",
+    "\n",
+    "# now if I just want to print the index, we do this\n",
+    "for count,ele in enumerate(l1,1):\n",
+    "    print(count)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Now, how to iterate from a particular index and not just the starting of an object. See below how it can be done**\n",
+    "\n",
+    "*Method 1*\n",
+    "You can use slicing:\n",
+    "\n",
+    "```\n",
+    "for item in some_list[2:]:\n",
+    "    # do stuff\n",
+    "```\n",
+    "\n",
+    "*Method 2*\n",
+    "You can always loop using an index counter the conventional C style looping:\n",
+    "```\n",
+    "for i in range(len(l)-1):\n",
+    "    print l[i+1]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**But then, another interesting thing came to my mind. That python while printing in for loop or rather printing anytime, changes the line i.e. moves to the new line. Well... what if I want to print all the elements in one line only?**\n",
+    "\n",
+    "**Now after lot of searching I found out, that in Python3, there's this thing referred to as print( ____,end=\"\"). Which lets us to write what we want at the end of a printed object. And using this we can do what we wanted in the first place. See below:**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0123456789"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(10):\n",
+    "    print(i,end=\"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
